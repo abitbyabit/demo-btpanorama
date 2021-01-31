@@ -1,0 +1,28 @@
+@import "../../shared/scss/global";
+
+:host {
+  background-color: #ffffff;
+}
+.report-packs {
+  padding: 1.8125rem 1.875rem 1.8125rem 1.875rem;
+  border-radius: 3px;
+  border: solid 1px #ededed;
+  background-color: #ffffff;
+
+  &__header {
+    font-family: HelveticaNeue;
+    font-size: $g__size--24;
+    line-height: 1.04;
+    text-align: left;
+    color: #00263e;
+  }
+  &__packs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__reports {
+    border-top: solid 1px #00232b;
+    margin-top: 1.25rem;
+  }
+}

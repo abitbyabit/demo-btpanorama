@@ -1,0 +1,80 @@
+@import "../../shared/scss/_global.scss";
+
+.individual-reports {
+  padding: $g__size--30;
+  border-radius: 3px;
+  border: solid 1px #ededed;
+  background-color: #ffffff;
+  font-family: HelveticaNeue;
+  &__title {
+    font-family: HelveticaNeue;
+    font-size: $g__size--24;
+    line-height: 1.04;
+    text-align: left;
+    color: #00263e;
+    margin-bottom: 10px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    min-height: 65px;
+    border-bottom: solid 1px #00232b;
+    transition: all 1.2s ease-out;
+
+    &--expanded {
+      height: 100%;
+      min-height: 65px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__report-summary {
+    padding-left: 9px;
+  }
+  &__report-name {
+    font-size: $g__size--16;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    text-align: left;
+    color: #00263e;
+  }
+  &__report-brief {
+    font-size: $g__size--12;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #67757f;
+  }
+
+  &__report-content {
+    display: none;
+    font-family: HelveticaNeue;
+    font-size: $g__size--14;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: #545454;
+
+    &--expanded {
+      display: block;
+    }
+  }
+}

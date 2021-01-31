@@ -1,0 +1,57 @@
+<div class="pack-wrapper">
+  <div [@flipPack]="flip" *ngIf="!packData?.isPackSelected" class="pack"
+    [ngClass]="{ 'pack--selected': packData?.isPackSelected }" (click)="packSelected(packData)"
+    (keyup.enter)="packSelected(packData)" tabindex="0" role="button" aria-pressed="false">
+    <div class="pack__name">
+      <span class="pack__text">
+        {{ packData?.packName }}
+      </span>
+    </div>
+    <div class="pack__selected-text">
+      {{ packData?.isPackSelected ? "selected" : "&nbsp;" }}
+    </div>
+
+    <div class="pack__description" [ngClass]="{ 'pack__description--pack-selected': packData?.isPackSelected }">
+      <span *ngIf="!packData?.isPackSelected" class="pack__text">
+        {{ packData?.packDescription }}
+      </span>
+      <button *ngIf="packData?.isPackSelected" class="pack__button">
+        <img src="../../../assets/images/icon-cancel-hover.svg" alt="close pack" />
+        <div>Close pack</div>
+      </button>
+    </div>
+  </div>
+
+  <div [@flipPack]="flip" *ngIf="packData?.isPackSelected" class="pack"
+    [ngClass]="{ 'pack--selected': packData?.isPackSelected }" (click)="packSelected(packData)"
+    (keyup.enter)="packSelected(packData)" tabindex="0" role="button" aria-pressed="false">
+    <div class="pack__name">
+      <span class="pack__text">
+        {{ packData?.packName }}
+      </span>
+    </div>
+    <div class="pack__selected-text">
+      {{ packData?.isPackSelected ? "selected" : "&nbsp;" }}
+    </div>
+
+    <div class="pack__description" [ngClass]="{ 'pack__description--pack-selected': packData?.isPackSelected }">
+      <span *ngIf="!packData?.isPackSelected" class="pack__text">
+        {{ packData?.packDescription }}
+      </span>
+      <button *ngIf="packData?.isPackSelected" class="pack__button">
+        <img src="../../../assets/images/icon-cancel-hover.svg" alt="close pack" />
+        <div>Close pack</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="pack-wrapper">
+  <div class="pack" (click)="packSelected(packData)" [@flipPack]="flip">
+    <div class="pack__item pack__front">Front
+    </div>
+    <div class="pack__item pack__back">Back
+    </div>
+  </div>
+</div> -->

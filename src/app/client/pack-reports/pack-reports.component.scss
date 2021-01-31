@@ -1,0 +1,75 @@
+@import "../../shared/scss/_global.scss";
+:host {
+  ::ng-deep {
+    .p-dropdown {
+      @include p-dropdown-cust(16.3125rem); //230px width, 16.3125rem
+    }
+    @media screen and (min-width: 48rem) and (max-width: 75rem) {
+      .p-dropdown {
+        @include p-dropdown-cust(10.3125rem); //230px width, 16.3125rem
+      }
+    }
+    // .p-datepicker {
+    //   table {
+    //     font-size: $g__size--14;
+    //     font-family: HelveticaNeue;
+    //   }
+    // }
+
+    .pack-report {
+      &__name {
+        font-family: HelveticaNeue-Bold;
+        font-size: $g__size--14;
+        font-weight: bold;
+        line-height: 0.86;
+        text-align: left;
+        color: #48525a;
+      }
+    }
+
+    .p-datatable .p-datatable-thead > tr > th,
+    .p-datatable .p-datatable-tbody > tr > td {
+      // text-align: left;
+      // padding: 1rem 1rem;
+      // border: 1px solid #e9ecef;
+      // border-width: 0 0 1px 0;
+      // font-weight: 600;
+      // color: #495057;
+      // background: #f8f9fa;
+      // transition: box-shadow 0.2s;
+      &.pack-reports__checkbox {
+        width: 1.0625rem;
+        padding-left: 0.9375rem;
+        padding-right: 7px;
+      }
+    }
+
+    .p-datatable .p-datatable-thead > tr > th {
+      font-family: HelveticaNeue;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: left;
+      color: #67757f;
+      padding-top: $g__size--15;
+      padding-bottom: $g__size--15;
+      &.pack-reports__column--target-weight,
+      &.pack-reports__column--date-range {
+        padding-left: $g__size--15;
+        border-left: solid 1px #e5e5e5;
+      }
+    }
+
+    .p-datatable-footer {
+      padding-left: 0px;
+      padding-bottom: 0px;
+      padding-top: $g__size--22;
+      background-color: #ffffff;
+      border-bottom-width: 0px;
+      border-top: solid 1px #e5e5e5;
+    }
+  }
+}

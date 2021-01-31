@@ -1,0 +1,39 @@
+@import "../../shared/scss/_global.scss";
+.client-header {
+    background-color: $g__color--dark-blue;
+    padding-left: $g__size--30;
+    padding-right: $g__size--20;
+    margin-bottom: $g__size--20;
+    height: $g__size--50;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__name {
+        font-size: $g__size--14;
+        font-weight: 500;
+        font-family: HelveticaNeue;
+        color: $g__color--white;
+    }
+    &__account {
+        font-family: HelveticaNeue;
+        font-size: $g__size--12;
+        color: $g__color--light-blue;
+    }
+    &__portofolio {
+        display: flex;
+        align-items: flex-end;
+        &--label {
+            font-family: HelveticaNeue;
+            font-size: $g__size--12;
+            color: $g__color--light-blue;
+            margin-right: 1.1875rem;
+        }
+        &--value {
+            color: $g__color--white;
+            font-family: HelveticaNeue;
+            font-family: Roboto-Light;
+            font-size: 22px;
+        }
+    }
+}

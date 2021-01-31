@@ -1,0 +1,47 @@
+<div class="quick-preferences">
+  <div class="quick-preferences__item quick-preferences__label">
+    <label id="quick-preferences">Quick preferences</label> 
+  </div>
+  <div class="quick-preferences__item quick-preferences__months">
+    <label id="quick-preferences__months" class="visually-hidden">
+      quick preferences settings:select past months
+    </label>
+    <p-dropdown
+      [ariaLabelledBy]="'quick-preferences__months'"
+      [options]="daysFrom"
+      [(ngModel)]="monthsFrom"
+      optionLabel="label"
+    ></p-dropdown>
+  </div>
+  <div class="quick-preferences__item quick-preferences__dates">
+    <label id="quick-preferences__at_to_date" class="visually-hidden">
+      quick preferences settings:select from date to end date
+    </label>
+    <app-calendar-date-at
+      aria-labelledby="quick-preferences__at_to_date"
+      [isDateRange]="true"
+      [(atDate)]="atDate"
+      [(toDate)]="toDate"
+    ></app-calendar-date-at>
+  </div>
+  <div class="quick-preferences__item quick-preferences__actions">
+    <label id="quick-preferences__pdf" class="visually-hidden">
+      quick preferences settings: download by PDF
+    </label>
+    <button
+      class="quick-preferences__action quick-preferences__action--active"
+      aria-labelledby="quick-preferences__pdf"
+    >
+      PDF
+    </button>
+    <label id="quick-preferences__csv" class="visually-hidden">
+      quick preferences settings: download by csv
+    </label>
+    <button
+      class="quick-preferences__action"
+      aria-labelledby="quick-preferences__csv"
+    >
+      CSV
+    </button>
+  </div>
+</div>

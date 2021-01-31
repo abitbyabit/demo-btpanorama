@@ -1,0 +1,59 @@
+@mixin icon-size {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  padding: 0.3px 0.9px 0.8px 0.3px;
+  object-fit: contain;
+}
+
+@mixin p-dropdown-cust($width) {
+  width: $width;
+  height: 2rem;
+  padding: 0 0 0 $g__size--15;
+  border-radius: 3px;
+  border: solid 1px #a1acb4;
+  background-color: #ffffff;
+  &:not(.p-disabled):hover {
+    border-color: #333333;
+    .p-dropdown-trigger {
+      border-left: solid 1px #333333;
+      .p-dropdown-trigger-icon {
+        color: #333333;
+      }
+    }
+  }
+  &:not(.p-disabled).p-focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #a6d5fa;
+    border-color: #333333;
+    .p-dropdown-trigger {
+      border-left: solid 1px #333333;
+      .p-dropdown-trigger-icon {
+        color: #333333;
+      }
+    }
+  }
+  .p-dropdown-trigger {
+    width: 40px;
+    padding: 10px 13px 8px;
+    border-left: solid 1px #a1acb4;
+    background-color: #fafafa;
+    &:hover {
+      border-left: solid 1px #333333;
+    }
+  }
+  .p-inputtext {
+    padding: 0;
+    align-self: center;
+  }
+}
+
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

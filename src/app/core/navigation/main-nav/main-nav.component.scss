@@ -1,0 +1,47 @@
+@import "../../../shared/scss/_global.scss";
+.main-nav {
+
+    height: $g__size--50;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: $g__size--15;
+    padding-right: $g__size--15;
+    .main-nav__logo {
+        width: 8.5rem;
+        height: 1rem;
+        object-fit: contain;
+    }
+    .main-nav__usersettings {
+        width: 100%;
+        height: 100%;
+        max-width: 18.34375rem;
+        border-left: solid 2px #d9d9d9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 1.28125rem;
+        padding-right: 0.9375rem;
+        &--user {
+            .name {
+                font-family: HelveticaNeue-Bold;
+                font-size: $g__size--14;
+                color: $g__color--blue;
+            }
+            .role {
+                font-family: HelveticaNeue;
+                font-size: $g__size--12;
+                color: $g__color--da-grey;
+            }
+        }
+        &--settings{
+            cursor: pointer;
+            &:hover,:focus{
+                svg path {
+                    fill: #00AFD7;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div class="footer">
+  <div class="footer__logo">
+    <span class="footer__poweredby">Powered by</span>
+    <img
+      src="../../../assets/images/logos/logo-btpanorama--footer.svg"
+      alt="bt panorama logo grey colour"
+    />
+  </div>
+  <ul class="footer__nav">
+    <li class="footer__item" *ngFor="let item of footerItems">
+      {{ item.name }}
+    </li>
+    <li class="footer__item">&#169; 2015 BT Financial Group</li>
+  </ul>
+
+  <!-- <div class="footer__copyright">&#169; 2015 BT Financial Group</div> -->
+</div>

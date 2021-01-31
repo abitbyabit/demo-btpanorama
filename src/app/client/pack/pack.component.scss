@@ -1,0 +1,125 @@
+:host {
+  margin: 1.25rem 1.25rem 0 0;
+}
+.pack-wrapper {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+.pack {
+  display: flex;
+  flex-direction: column;
+
+  width: 11rem;
+  height: 13.6875rem;
+  border-radius: 3px;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+
+  font-family: HelveticaNeue;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: transform 1s;
+  -ms-transform: transform 1s;
+  transform: transform 1s;
+
+  &__item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+ 
+  }
+  &__item--front {
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  &__item--back {
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  &:hover {
+    box-shadow: 0 40px 45px 0 rgba(0, 0, 0, 0.32);
+    cursor: pointer;
+  }
+
+  &__name {
+    height: 7.0625rem;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  &__text {
+    line-height: 1.33;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 5;
+    -moz-line-clamp: 5;
+    -ms-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+  }
+
+  &__cta-close {
+    display: none;
+  }
+  &__description {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    color: #ffffff;
+    height: 91px;
+    padding: 15px 15px 20px;
+    background-image: linear-gradient(185deg, #0c2b34, #335178);
+
+    .pack__button {
+      width: 149px;
+      height: 32px;
+      padding: 8px 28px 9px 29px;
+      border-radius: 3px;
+      border: solid 1px #007ba9;
+
+      font-family: HelveticaNeue;
+      font-size: 14px;
+
+      color: #ffffff;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--pack-selected {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      background-image: none;
+      height: 91px;
+      padding: 0;
+    }
+  }
+
+  &__selected-text {
+    height: 12px;
+    width: 100%;
+    font-size: 12px;
+    padding: 0 15px 0 15px;
+  }
+
+  &--selected {
+    background-image: linear-gradient(182deg, #0c2b34, #335178);
+    color: #ffffff;
+    .pack__selected-text,
+    .pack__cta-close {
+      display: block;
+    }
+  }
+}

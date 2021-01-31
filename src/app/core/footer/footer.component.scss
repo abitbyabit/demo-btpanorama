@@ -1,0 +1,31 @@
+.footer {
+  font-family: HelveticaNeue;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #5b6770;
+
+  border-top: solid 1px #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    display: flex;
+    align-items: center;
+    .footer__poweredby {
+      margin: 0 5px 0 4px;
+    }
+  }
+  &__nav {
+    display: flex;
+    list-style: none;
+  }
+  &__item {
+    list-style-type: none;
+    margin-left: 1rem;
+  }
+}

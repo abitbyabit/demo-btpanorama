@@ -1,0 +1,12 @@
+:host {
+}
+.content-reports {
+    padding: 0 1.875rem 0 1.875rem;
+    &__quick-reference, &__report-packs{
+        margin-bottom: 20px;
+    }
+    &__individual-reports {
+        margin-bottom: 30px;
+
+    }
+}

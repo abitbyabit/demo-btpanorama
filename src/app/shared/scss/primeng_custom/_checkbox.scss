@@ -1,0 +1,21 @@
+.p-component {
+  font-family: HelveticaNeue;
+}
+.p-checkbox {
+  width: 1.0625rem;
+  height: 1.0625rem;
+  .p-checkbox-box {
+    width: 1.0625rem;
+    height: 1.0625rem;
+    border-width: 1px;
+    &.p-highlight {
+      border: solid 1px #0079a2;
+      background-color: #007ead;
+    }
+
+    .p-checkbox-icon {
+      font-size: 0.625rem;
+      font-weight: bold;
+    }
+  }
+}

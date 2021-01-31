@@ -1,0 +1,121 @@
+<div @enterLeave class="pack-reports">
+  <p-table [value]="reports" dataKey="name" [responsive]="true" [(selection)]="selectedReports">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="pack-reports__checkbox">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th style="width: 35%" class="pack-reports__column">Reports</th>
+        <th
+          style="width: 30%"
+          class="pack-reports__column pack-reports__column--date-range"
+        >
+          At a / Date range
+        </th>
+        <th
+          style="width: 35%"
+          class="pack-reports__column pack-reports__column--target-weight"
+        >
+          Target weight %
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-report>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="report"></p-tableCheckbox>
+        </td>
+        <td pEditableColumn>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <span class="pack-report__name">{{ report.reportName }}</span>
+            </ng-template>
+            <ng-template pTemplate="output">
+              <span class="pack-report__name">{{ report.reportName }}</span>
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td pEditableColumn>
+          <p-cellEditor>
+            <ng-container *ngIf="report.atDate && !report.toDate">
+              <ng-template pTemplate="input">
+                <div [style]="{ width: '100%' }">
+                  <app-calendar-date-at
+                    [(atDate)]="report.atDate"
+                  ></app-calendar-date-at>
+                </div>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <div [style]="{ width: '100%' }">
+                  <app-calendar-date-at
+                    [(atDate)]="report.atDate"
+                  ></app-calendar-date-at>
+                </div>
+              </ng-template>
+            </ng-container>
+            <ng-container *ngIf="report.atDate && report.toDate">
+              <ng-template pTemplate="input">
+                <div [style]="{ width: '100%' }">
+                  <app-calendar-date-at
+                    [isDateRange]="true"
+                    [(atDate)]="report.atDate"
+                    [(toDate)]="report.toDate"
+                  ></app-calendar-date-at>
+                </div>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <div [style]="{ width: '100%' }">
+                  <app-calendar-date-at
+                    [isDateRange]="true"
+                    [(atDate)]="report.atDate"
+                    [(toDate)]="report.toDate"
+                  ></app-calendar-date-at>
+                </div>
+              </ng-template>
+            </ng-container>
+          </p-cellEditor>
+        </td>
+        <td pEditableColumn>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <p-dropdown
+                [options]="targetWeightOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="report.targetWeightPercent"
+              ></p-dropdown>
+            </ng-template>
+            <ng-template pTemplate="output">
+              <p-dropdown
+                [options]="targetWeightOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="report.targetWeightPercent"
+                aria-placeholder="No benchmarks selected"
+                placeholder="No benchmarks selected"
+              ></p-dropdown>
+            </ng-template>
+          </p-cellEditor>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage" let-report>
+      <tr>
+        <td [attr.colspan]="3">No reports found</td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="summary">
+      <button
+        class="button-cust"
+        [ngClass]="{
+          'button-cust--disabled': !selectedReports.length,
+          'button-cust--primary': selectedReports.length
+        }"
+      >
+        Download
+      </button>
+    </ng-template>
+  </p-table>
+</div>

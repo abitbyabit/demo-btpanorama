@@ -1,0 +1,73 @@
+@import "../../shared/scss/_global.scss";
+:host {
+  ::ng-deep {
+    .p-dropdown {
+      @include p-dropdown-cust(14.375rem); //230px width, 16.3125rem
+    }
+    .p-datepicker {
+      table {
+        font-size: $g__size--14;
+        font-family: HelveticaNeue;
+      }
+    }
+  }
+}
+
+.quick-preferences {
+  min-height: 5rem;
+  border-radius: 3px;
+  border: solid 1px #ededed;
+  background-color: #f5f5f5;
+  padding: 1.5625rem 1.875rem 1.5625rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &__item {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+  &__label {
+    font-family: HelveticaNeue;
+    font-size: $g__size--20;
+    color: #00263e;
+    margin-right: $g__size--20;
+  }
+  &__dates {
+    margin-right: $g__size--20;
+    display: flex;
+    align-items: center;
+  }
+  &__months {
+    margin-right: $g__size--20;
+  }
+  &__right-arrow {
+    margin: 0 $g__size--10 0 $g__size--10;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+  &__action {
+    width: 4.25rem;
+    height: 2rem;
+    padding: 9px 20px;
+    border-radius: 3px;
+    border: solid 1px #d9d9d9;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--active {
+      border: solid 2px $g__color--black;
+      background-color: #ffffff;
+      font-family: HelveticaNeue-bold;
+      font-size: $g__size--14;
+      font-weight: bold;
+      color: $g__color--black;
+    }
+  }
+}
+
+
+.visually-hidden {
+  @include visually-hidden;
+}

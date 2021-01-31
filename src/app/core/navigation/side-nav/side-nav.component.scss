@@ -1,0 +1,30 @@
+@import "../../../shared/scss/_global.scss";
+
+.sidebar {
+  width: $g__size--50;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #00232b, #786c82);
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $g__size--50;
+    border-left: $g__size--5 solid rgba(0, 175, 215, 0);
+
+    &:hover {
+      cursor: pointer;
+      border-left: $g__size--5 solid rgba(0, 175, 215, 1);
+    }
+    &--active {
+      border-left: $g__size--5 solid rgba(0, 175, 215, 1);
+    }
+  }
+  &__icon {
+    @include icon-size;
+  }
+}

@@ -1,0 +1,10 @@
+.app-container {
+    background-color: #fafafa;
+    &__sidenav {
+        width: 3.125rem;
+        max-width: 3.125rem;
+    }
+    &__app-content {
+        max-width: calc(100% - 3.125rem);
+    }
+}

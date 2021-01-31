@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeflex/primeflex.css";
+@import "./assets/fonts/_fonts.css";
+@import "./app/shared/scss/primeng_custom/checkbox";
+@import "./app/shared/scss/primeng_custom/calendar";
+@import "./app/shared/scss/button";
+
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  font-family: HelveticaNeue-Bold;
+}
+
+h2 {
+  color: green;
+  font-family: HelveticaNeue-Bold;
+}
+h3 {
+  color: green;
+  font-family: HelveticaNeue-Thin;
+}
+
+

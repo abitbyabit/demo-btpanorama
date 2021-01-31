@@ -1,0 +1,25 @@
+<app-client-header></app-client-header>
+<app-report-nav></app-report-nav>
+<div class="content-reports">
+  <div
+    class="content-reports__quick-reference"
+    *ngIf="quickPreferences$ | async as quickPreferences"
+  >
+    <app-quick-preferences
+      [quickPreferences]="quickPreferences"
+    ></app-quick-preferences>
+  </div>
+  <div class="content-reports__report-packs" *ngIf="packReports$ | async as packReports">
+    <app-report-packs
+      [packsData]="packReports"
+      [currentPackSelected]="currentPackSelected$ | async"
+      (packClicked)="onPackClicked($event)"
+    ></app-report-packs>
+  </div>
+  <div
+    class="content-reports__individual-reports"
+    *ngIf="individualReports$ | async as reports"
+  >
+    <app-individual-reports [reports]="reports"></app-individual-reports>
+  </div>
+</div>

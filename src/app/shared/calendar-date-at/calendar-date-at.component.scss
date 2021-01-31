@@ -1,0 +1,128 @@
+@import "../../shared/scss/_global.scss";
+:host {
+  width: 100%;
+  max-width: 100%;
+  ::ng-deep {
+    display: flex;
+    align-items: center;
+    .p-calendar {
+      height: 100%;
+      max-height: 2rem;
+      border-left: solid 1px #a1acb4;
+      &:hover {
+        border-color: #00232b;
+      }
+      .p-inputtext {
+        font-family: HelveticaNeue;
+        font-size: $g__size--14;
+        text-align: center;
+        border: none;
+        color: #5b6770;
+        &:hover {
+          color: #48525a;
+        }
+      }
+    }
+    .date-pick:hover {
+      .p-calendar {
+        border-left: solid 1px #00232b;
+      }
+      .date-pick--date-range {
+        .p-calendar {
+          border-right: solid 1px #00232b;
+        }
+      }
+    }
+    .date-pick__calendar.date-pick__calendar--noicon {
+      border-radius: 3px;
+      .p-calendar {
+        border: none;
+      }
+    }
+    .date-pick--date-range {
+      .p-calendar {
+        border-right: solid 1px #a1acb4;
+      }
+    }
+  }
+}
+
+.date-pick {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  border: solid 1px #a1acb4;
+  height: 2rem;
+  &--noicon {
+    width: 6.875rem;
+  }
+  &:hover {
+    border-color: #00232b;
+    svg {
+      path {
+        fill: #00232b;
+      }
+    }
+  }
+  &__trigger {
+    display: flex;
+    align-items: center;
+    width: 41px;
+    height: 100%;
+    background-color: #f9f9f9;
+    justify-content: center;
+    border-radius: 3px;
+    svg:hover {
+      path {
+        fill: #00232b;
+      }
+    }
+  }
+  &__calendar {
+    width: 110px;
+    height: 100%;
+    max-height: 100%;
+    padding: 0;
+    // border-left: solid 1px #a1acb4;
+    background-color: #ffffff;
+    border-radius: 0 3px 3px 0;
+    // border:none;
+    &--date-range {
+    }
+  }
+  &__right-arrow {
+    margin: 0 $g__size--10 0 $g__size--10;
+  }
+  &__atdate_wrapper,
+  &__todate_wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+@media screen and (min-width: 48rem) and (max-width: 75rem) {
+  :host-context(td) {
+    ::ng-deep {
+      .date-pick {
+        min-height: 2rem;
+        height: 100%;
+        flex-direction: column;
+        &__atdate_wrapper {
+          border-bottom: 1px solid;
+          border-radius: 0;
+          &.date-pick__atdate_wrapper--no-bottom-border{
+            border-bottom: none;
+          }
+        }
+        .date-pick--date-range {
+          .p-calendar{
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}

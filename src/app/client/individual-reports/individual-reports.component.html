@@ -1,0 +1,53 @@
+<div @enterLeave class="individual-reports">
+  <div class="individual-reports__title">Individual reports</div>
+  <div class="individual-reports__list">
+    <ng-container *ngFor="let report of individualReports; index as index">
+      <div
+        class="individual-reports__list-item"
+        [ngClass]="{
+          'individual-reports__list-item--expanded': report.isExpanded
+        }"
+      >
+        <div
+          tabindex="0"
+          role="button"
+          class="individual-reports__header"
+          (click)="toggleReportContent($event, index)"
+          (keyup.enter)="toggleReportContent($event, index)"
+        >
+          <img
+            *ngIf="!report.isExpanded"
+            class="individual-reports__icon"
+            src="../../../assets/images/icon-movement-none.svg"
+            alt="expand report"
+          />
+          <img
+            *ngIf="report.isExpanded"
+            class="individual-reports__icon"
+            src="../../../assets/images/icon-movement-positive.svg"
+            alt="expand report"
+          />
+          <div class="individual-reports__report-summary">
+            <div class="individual-reports__report-name">
+              {{ report.reportName }}
+            </div>
+            <div class="individual-reports__report-brief">
+              {{ report.reportBrief }}
+            </div>
+          </div>
+        </div>
+
+        <div @enterLeave *ngIf="report.isExpanded"
+          class="individual-reports__report-content"
+          [ngClass]="{
+            'individual-reports__report-content--expanded': report.isExpanded
+          }"
+        >
+          <p>
+            {{ report.reportContent }}
+          </p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

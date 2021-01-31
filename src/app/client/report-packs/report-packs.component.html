@@ -1,0 +1,18 @@
+<div class="report-packs">
+  <div class="report-packs__header">Report packs</div>
+  <div class="report-packs__packs">
+    <ng-container *ngFor="let pack of packsData">
+      <app-pack
+        [packData]="pack"
+        (packClicked)="onPackClicked($event)"
+      ></app-pack>
+    </ng-container>
+  </div>
+
+  <div
+    class="report-packs__reports"
+    *ngIf="currentPackSelected?.isPackSelected"
+  >
+    <app-pack-reports [packData]="currentPackSelected"></app-pack-reports>
+  </div>
+</div>

@@ -4,7 +4,6 @@ Implement Client feature module dashboard screen.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3, along with Angular 11+, NGRX 10+, RXJS 6+, Typescript 4+, and Primeng 11+.
 
 ## Notes
-  * The demo can be accessed via [Btpanorama ](https://bt-panorama-demo.web.app/) -- https://bt-panorama-demo.web.app 
   * Used angular in memory api to fake data api request.
   * The demo was designed using feature modules for client, business, user, investment,market data, tracking, etc.  
 * Ngrx State management: Each feature module has its own feature state, along with global App state

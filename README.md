@@ -4,13 +4,15 @@ Implement Client feature module dashboard screen.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3, along with Angular 11+, NGRX 10+, RXJS 6+, Typescript 4+, and Primeng 11+.
 
 ## Notes
+* Online demo can be checked via https://bt-panorama-demo.web.app/ or https://stackblitz.com/edit/angular-ivy-zevtsh
 * Used angular in memory api to fake data api request.
-* The demo was designed using feature modules for client, business, user, investment,market data, tracking, etc.  
+* The demo was designed using feature modules for client, business, user, investment,market data, tracking, etc. And it's ready for furhter scale development.  
 * Ngrx State management: Each feature module has its own feature state, along with global App state
 * Container/Presentation component pattern applied.
-* responsive test at desktop/tablet screen size
-* animation applied at pack click and individual reports expanding
-* hover over effect applied while hover over pack
+* Desktop/tablet screen responsive.
+* Animation being applied while pack being clicked and individual reports being expanded.
+* Hover over effect applied while hover over the packs.
+* Allows keyboard navigation.
 
 
 

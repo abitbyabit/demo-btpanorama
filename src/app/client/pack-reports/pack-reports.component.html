@@ -1,5 +1,5 @@
 <div @enterLeave class="pack-reports">
-  <p-table [value]="reports" dataKey="name" [responsive]="true" [(selection)]="selectedReports">
+  <p-table [value]="reports" dataKey="name" dataKey="reportId" [responsive]="true" [(selection)]="selectedReports">
     <ng-template pTemplate="header">
       <tr>
         <th class="pack-reports__checkbox">
